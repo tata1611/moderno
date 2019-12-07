@@ -80,13 +80,13 @@ span{
     &-title{
         margin-bottom: 10px;
         font-size: 48px;
-        font-weight: 700;
+        @include f700;
         line-height: 72px;
     }
     &-text{
         margin-bottom: 50px;
         font-size: 20px;
-        font-weight: 500;
+        @include f500;
         line-height: 30px;
     }
     &-form{
@@ -101,7 +101,7 @@ span{
         border: none;
         outline: none;
         font-size: 14px;
-        font-weight: 500;
+         @include f500;
         padding-left: 25px;
         padding-right: 60px;
         &:focus{
@@ -109,7 +109,7 @@ span{
         }
         &::placeholder{
             color: #90a4ae;
-            font-weight: 500;
+            @include f500;
 
         }
         }
@@ -179,7 +179,7 @@ span{
         padding: 10px 30px;
         align-items: center;
         min-height: 90px;
-        font-weight: 500;
+         @include f500;
         border-bottom: 1px solid #e7ecf2;
 
     }
@@ -188,7 +188,7 @@ span{
     }
     &-title{
         color: $bg;
-        font-weight: 500;
+         @include f500;
         font-size: 18px;
         display: block;
     }
@@ -201,7 +201,7 @@ span{
     &-price{
         font-size: 20px;
         color: $bg;
-        font-weight: 500;
+         @include f500;
     }
     &-info{
         display: flex;
@@ -227,7 +227,7 @@ span{
         }
         span{
             font-size: 14px;
-            font-weight: 500;
+             @include f500;
         }
     }
     &-star{
@@ -287,8 +287,76 @@ span{
             }
         }
     }
+}    
+// end product}
+
+// start adventeges
+
+.adventeges{
+    background-color: $bg;
+    padding: 110px 0;
+}
+.adventeges__title{
+color: #fff;
 }
 
-
-
+.adventeges__inner{
+    display: flex;
+    justify-content: space-between;
+}
+.adventeges__item{
+    max-width: 370px;
+    text-align: center;
+    padding: 0 10px; 
+       &:hover{
+        .adventeges__item-images{
+            background-color: $green;
+            }
+        .adventeges__item-title{
+            color: $green;
+            }
+        .adventeges__item-images{
+            g{
+                fill:#fff;
+            }
+            }
+    }
+    &-images{
+        width: 114px;
+        height: 114px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 30px;
+        transition: all .3s;
+    }
+    &-title{
+        margin-bottom: 25px;
+        color: #fff;
+        font-size: 24px;
+        @include f500;
+        transition: all .3s;
+    }
+    &-text{
+        color: #b0bec5;
+        font-size: 15px;
+    }
+}
+.icosvg-1{
+    svg{
+        width: 74px;
+    }
+}
+.icosvg-2{
+    svg{
+        width: 70px;
+    }
+}.icosvg-3{
+    svg{
+        width: 88px;
+    }
+}
+   
  
