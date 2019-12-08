@@ -6,6 +6,10 @@ html{
 *::after{
     box-sizing: inherit;
 }
+html,
+body {
+	height: 100%;
+}
 
 a{
     display: inline-block;
@@ -20,6 +24,18 @@ li{
     list-style: none;
 }
  
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
 .container{
     max-width: 1200px;
     margin: 0 auto;
@@ -35,6 +51,10 @@ li{
      padding: 0 15px;
     }
 }
+.page-content{
+    background-color: $grey;
+}
+
 .title{
     color: $bg;
     font-weight: 700;
@@ -42,4 +62,35 @@ li{
     line-height: 60px;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.breadcrumbs{
+    &__inner{
+        padding: 45px 0px 40px;
+    }
+    &__list{
+        li{
+            display: inline-block;
+            position: relative;
+        &+li{
+            padding-left: 24px;
+            &::before{
+                content: '-';
+                position: absolute;
+                left: 8px;
+                color: $green;
+            }
+        }
+        &:last-child{
+            a,
+            span{
+                color:$bg;
+                }
+            }
+        }
+    
+        a{
+            color: #b0bec5;
+        }
+    }
 }
