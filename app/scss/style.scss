@@ -790,6 +790,7 @@ color: #fff;
         border: none;
         font-size: 16px;
         color:#90a4ac;
+        outline: none;
         &.active{
             color:$green;
         }
@@ -817,6 +818,7 @@ button.icon-sort{
     .product__item{
         max-width: 270px;
         background-color: #fff;
+        transition: all .5s;
     }
     .product__item-img{
         min-height: 180px;
@@ -842,15 +844,16 @@ button.icon-sort{
     }
 }
 .product-page__items{
-    display: flex;justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 30px;
 }
 .pagination{
     li{
         display: inline-block;
         &+li{
-            margin-left: 6px;
-            
+            margin-left: 6px;   
         }
     }
     a,
@@ -870,18 +873,38 @@ button.icon-sort{
             color:#fff;
         }
 
-
     }
 }
+.product__item-price{
+    display: none;
+}
+.product__item-text{
+    display: none;
+    font-size: 14px;
+    color:#70838d;
+    margin-top: 20px;
+}
+.product__item{
+    margin-bottom: 10px;
+    &.list{
+        max-width: 100%;
+        .product__item-img{
+            width: 240px;
+            float: left;
+        }
+        .product__item-text{
+            display: block;
+        }
+        .product__item-price{
+            display: block;
+        }
+        .product__item-name{
+            max-width: 480px;
+        }
+    }
+
+}
+
 
 // end product-page
-.Rectangle_67_copy_3 {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
-  position: absolute;
-  left: 827px;
-  top: 2068px;
-  width: 43px;
-  height: 38px;
-  z-index: 181;
-}
+
