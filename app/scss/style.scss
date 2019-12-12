@@ -177,7 +177,7 @@ a{
 .circle__menu{
 position: absolute;
 top: 69px;
-transition: all .3s;
+
 z-index: 2;
 }
 
@@ -247,6 +247,7 @@ z-index: 2;
     right: 0;
     height: 0;
     overflow: hidden;
+    transition: all .3s;
 }
 .circle__images{
     margin-right: 15px;
