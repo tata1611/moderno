@@ -92,20 +92,19 @@
 }
 @media(max-width:520px){
     .header{
-        overflow: hidden;   
+        overflow: hidden; 
+        
     }
     .header__btn-menu{
         display: block;
-    }
-    .menu__list{
-        top: 70px;
     }
     .header__btn-menu{
         width: 70px;
         height: 70px;
         background-color:$bg;
         position: absolute;
-        right: -15px;
+        right: 0px;
+        // right: -15px;
         top: 0;
         z-index: 1;
         &::before{
@@ -116,6 +115,9 @@
             font-size: 36px;
             color:#fff ;
         }
+    .menu__list{
+        top: 70px;
+    }
     }
     .header__box{
         transition: all .5s;
@@ -126,8 +128,10 @@
         right: -100%;
         z-index: 1;
         &.active{
-            left: 48px;
-            right: 70px;
+            left: 70px;
+            right: 90px;
+            // left: 48px;
+            // right: 70px;
         }
     }
     .user__menu{
