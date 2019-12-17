@@ -15,6 +15,22 @@
     .contact__form input{
         width: 100%;
     }
+    .productmini {
+        max-width: 48%;
+    }
+    .product-one__inner{
+        display: block;
+        .aside__item{
+            width: 100%;
+        }
+    }
+    .product-one__content{
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .product-one__images{
+        max-width: 100%;
+    }
 }
 
 @media(max-width:1150px){
@@ -145,6 +161,12 @@
     .upload__inner button{
         margin-left: 0;
     }
+    .product-one__box{
+        display: block;
+    }
+    .product-one__link{
+        margin-bottom: 20px;
+    }
 }
 
 @media(max-width:740px){
@@ -174,10 +196,30 @@
     .circle__menu{
     right: auto;
     }
+    .productmini{
+        max-width: 100%;
+    }
    
 }
 
 @media(max-width:600px){
+    .product-one__link{
+    a{
+        width: 100%;
+        margin-bottom: 15px;
+        &+a{
+            margin-left: 0;
+        }
+    }
+}
+    .product-one__images{
+        height: 300px;
+    }   
+    
+    .tab-items__list {
+        column-count: 1;
+        column-gap: 0px;
+    }
     .page-404__inner{
         padding: 0px 15px;
     }
@@ -233,6 +275,17 @@
     }
     .profile__aside-btn{
         width: 280px;
+    }
+    .product-one__tabs{
+        .tabs{
+            display: block;
+            .tab{
+                display: block;
+                &+.tab{
+                    border-top: 1px solid #dedede;
+                }
+            }
+        }
     }
 }
 @media(max-width:540px){
