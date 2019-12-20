@@ -58,6 +58,9 @@
     .productmini {
         max-width: 48%;
     }
+    .product-page__aside{
+            margin-right: 0;
+        }
 
     .product-one__inner{
         display: block;
@@ -79,10 +82,6 @@
         .aside__item{
             width: 100%;
         }
-    }
-
-    .product-page__aside{
-        margin-right: 0;
     }
 
     .top-sellers{
@@ -158,7 +157,7 @@
 
     .search__inner-title{
         font-size: 35px;
-        line-height: 30px;
+        line-height: 40px;
     }
 
     .product-page__content .product__item{
@@ -213,27 +212,10 @@
     .profile__aside-btn{
         width: 300px;
     }
-    .profile__banner-images{
-        min-height: 245px;
-    }
-
-    .prifile__banner{
-        margin-bottom: 20px;
-    }
-    .profile__items{
-        display: block;
-    }
-
-    .profile__item{
-        width: 100%;
-    }
-
-    .profile__item+.profile__item{
-        border-top: 1px solid #dedede;
-        border-left: none;
-    }
     
 }
+
+
 
 @media(max-width:840px){
     .author{
@@ -363,7 +345,7 @@
         max-width: 100%;
     }
 
-    .product__inner-btn{
+    .product__inner-btn button{
         width: 100%;
         & + button{
             margin-left: 0;
@@ -377,6 +359,25 @@
 
     .circle__menu{
     right: auto;
+    }
+     .profile__banner-images{
+        min-height: 245px;
+    }
+
+    .prifile__banner{
+        margin-bottom: 20px;
+    }
+    .profile__items{
+        display: block;
+    }
+
+    .profile__item{
+        width: 100%;
+    }
+
+    .profile__item+.profile__item{
+        border-top: 1px solid #dedede;
+        border-left: none;
     }
 
     .productmini{
@@ -415,16 +416,22 @@
     }
 
     .page-404__404::after{
+        content: '';
         margin-left: 0;
-        top: 9px;
-        right: 13px;  
+        top: 16px;
+        right: 0px;  
+        // top: 9px;
+        // right: 13px;  
     }
 
+// ?????
     .page-404__wrapper, 
     .about__wrapper, 
     .contact__wrapper{
         margin-bottom: 80px;
     }
+
+// ????
 
     .upload__inner-content{
         padding-left: 10px;
@@ -516,9 +523,14 @@
 }
 
 @media(max-width:520px){
-    .login__wrapper .creat__acc{
+
+
+    .creat__acc{
         width: 100%;
     }
+    // .login__wrapper .creat__acc{
+    //     width: 100%;
+    // }
 
     .login__wrapper button{
         margin-right: 0;
@@ -547,7 +559,7 @@
         right: 0px;
         // right: -15px;
         top: 0;
-        z-index: 1;
+        z-index: 4;
         &::before{
             position: absolute;
             top: 50%;
@@ -561,9 +573,9 @@
         }
     }
 
-    .header{
-        overflow: hidden;    
-    }
+    // .header{
+    //     overflow: hidden;    
+    // }
 
     .header__box{
         transition: all .5s;
@@ -572,7 +584,7 @@
         height: 70px;
         left: 100%;
         right: -100%;
-        z-index: 1;
+        z-index: 2;
         &.active{
             left: 65px;
             right: 90px;
@@ -603,8 +615,8 @@
 
     .circle__menu{ 
         top:52px ;
-        right: auto;
-        left: -20px;
+        // right: auto;
+        // left: -20px;
     }
 
 }

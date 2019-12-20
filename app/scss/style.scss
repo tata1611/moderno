@@ -2,19 +2,11 @@
 @import 'global';
 @import 'fonts';
  
-body{
-    font-family: 'Roboto-Regular', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
-    color: $text;
-}
 
+// start header
 .header{
     background-color: #fff;
 }
-
-// start header
 
 .header__top-inner{
     display: flex;
@@ -50,30 +42,26 @@ span{
     background-color: $red;
     margin-left: 7px;
 }
-
-.header__btn-logint--off{
-    display: none;
-}
-
-.header__btn-logout{
-    display: none;
-    &.header__btn-logint--on{
-        display: block;
-    }
-}
-
-.header__btn-menu,
-menu__btn{
-    display: none;
-}
-
 .header__menu{
     background: $bg;
 }
-
-.header__box{
+.menu{
     display: flex;
     align-items: center;
+    height: 60px;
+}
+
+.menu__list{
+    li{
+        display: inline-block;
+        &+li{
+            margin-left: 30px;
+        }
+    }
+    a{
+        color: #fff;
+        font-size: 14px;
+    }
 }
 
 .header__circle{
@@ -94,9 +82,9 @@ menu__btn{
         color: #a0a0a0;
         font-size: 14px;
     }
-    &+.header__circle{
-        margin-left: 15px;
-    }
+    // &+.header__circle{
+    //     margin-left: 15px;
+    // }
     span{
         position: absolute;
         width: 18px;
@@ -107,9 +95,13 @@ menu__btn{
         right: -7px;
         top: -7px;
         font-size: 11px;
+        color: #fff;
     }
 }
-
+.header__box{
+    display: flex;
+    align-items: center;
+}
 .notification{
     span{
     background-color: $yellow;
@@ -126,6 +118,17 @@ menu__btn{
     margin-right: 20px;
     span{
         background-color: $green;
+    }
+}
+
+.header__btn-logint--off{
+    display: none;
+}
+
+.header__btn-logout{
+    display: none;
+    &.header__btn-logint--on{
+        display: block;
     }
 }
 
@@ -167,7 +170,6 @@ menu__btn{
          @include f700;
     }
 }
-
 .user__menu{
     top:69px;
     left: 20px;
@@ -179,6 +181,8 @@ menu__btn{
     transition: all .3s;
     height: 0px;
     overflow: hidden;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
 a{
     font-size: 12px;
     color:#546e7a;
@@ -191,7 +195,6 @@ a{
     top: 69px;
     z-index: 2;
 }
-
 .user__box,
 .basket__box,
 .notification__box,
@@ -208,7 +211,14 @@ a{
         }
     } 
 }
-
+.circle__menu{
+    border-top: 1px solid #e0e0e0;
+    top: 62px;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s;
+}
 .basket__box,
 .notification__box,
 .message__box{
@@ -227,12 +237,12 @@ a{
             border-width: 1px;
         }
     }
-    
 }
-
 .circle__item{
     background-color: #fff;
     border: 0px solid #e0e0e0;
+    border-right-width: 1px;
+    border-left-width: 1px;
     border-top: none;
     padding: 0 23px;
     transition: all .3s;
@@ -240,8 +250,6 @@ a{
     align-items: center;
     width: 269px;
     position: relative;
-    border-right-width: 1px;
-    border-left-width: 1px;
     &::before{
         position: absolute;
         top: 27px;
@@ -250,20 +258,6 @@ a{
         font-size: 16px;
     }
 }
-
-.icons-color::before{
-    color:$tomato;
-} 
-
-.circle__menu{
-    border-top: 1px solid #e0e0e0;
-    top: 62px;
-    right: 0;
-    height: 0;
-    overflow: hidden;
-    transition: all .3s;
-}
-
 .circle__images{
     margin-right: 15px;
 }
@@ -277,7 +271,6 @@ a{
     color: $green;
     font-size: 12px;
 }
-
 .circle__info-price{
     @include f500;
     color: #000;    
@@ -288,28 +281,14 @@ a{
     font-size: 10px;
     color:#707070;
 }
-
-.notification__menu,
-.message__menu{
-    .circle__images{
-        margin-right: 20px;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-    }
-    .circle__info{
-        line-height: 18px;
-    }
-}
-
 .basket__summ{
     padding: 16px 17px 12px;
     background-color: #fff;
     border: 1px solid #e0e0e0;
-
+    border-top: none;
 }
 
-.basket__summ-title{
+.basket__title{
     display: flex;
     justify-content: space-between;
     padding-left: 13px;
@@ -318,7 +297,6 @@ a{
     @include f700;
     font-size: 16px;
     color:$bg;
-
 }
 
 .basket__btn{
@@ -332,33 +310,35 @@ a{
 }
 
 .basket__btn-checkout{
-    width: 120px;
+    width: 123px;
     margin-left: 6px;
     background-color: $red;
 }
-
-// start menu
-
-.menu{
-    display: flex;
-    align-items: center;
-    height: 60px;
+.notification__menu,
+.message__menu{
+    .circle__images{
+        margin-right: 20px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+    .circle__info{
+        line-height: 18px;
+    }
 }
 
-.menu__list{
-    li{
-        display: inline-block;
-        &+li{
-            margin-left: 30px;
-        }
-    }
-    a{
-        color: #fff;
-        font-size: 14px;
-    }
+.icons-color::before{
+    color:$tomato;
+} 
+
+.header__btn-menu,
+menu__btn{
+    display: none;
 }
 
 // end header
+
+
 // start modal
 
 #modal{
@@ -421,7 +401,7 @@ a{
     }
     button{
         margin-top: 19px;
-        padding: 18px 0 19px;
+        padding: 18px 0 16px;
         background-color: #fff;
         width: 140px;
         text-transform: uppercase;
@@ -431,21 +411,22 @@ a{
         color: #000;
         text-align: center;
         box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
-}
 
-.lost__pass{
+}
+}
+.lost-pass{
     display: block;
     margin-top: 20px;
     color: #fff;
     font-size: 18px;
 }
 
-.creat__acc{
+.creat-acc{
     margin-top: 19px;
     padding: 15px 0 15px 28px;
     color: #fff;
     text-align: center;
-    width: 244px;
+    width: 246px;
     background-color: #76ae36;
     font-size: 18px;
     position: relative;
@@ -457,13 +438,14 @@ a{
         font-family: 'icomoon';
     }
 }
-}
+
 
 .fancybox-button svg path{
     color: #fff;
 }
 
 // end modal 
+
 // start search 
 
 .search{
@@ -503,12 +485,13 @@ a{
         margin: 0 auto;
         position: relative;
         input{
+        display: block;
         width: 100%;
         height: 56px;
         border-radius: 4px;
         box-shadow: 0px 1px 10px 0px rgba(124, 178, 64, 0.75);
         border: none;
-        outline: none;
+        // outline: none;
         font-size: 14px;
          @include f500;
         padding-left: 25px;
@@ -535,7 +518,7 @@ a{
 
 // end search
 
-// start product
+// start products
 
 .products{
     padding: 110px 0px;
@@ -565,7 +548,6 @@ a{
             background-color: $red;
             color: #fff;
             }
-
         }
     }
 
@@ -623,7 +605,7 @@ a{
     &-price{
         font-size: 20px;
         color: $bg;
-         @include f500;
+         @include f700;
     }
     &-info{
         display: flex;
@@ -659,11 +641,10 @@ a{
             color: $bg;
         }
     }
-
-    .rate-star{
-        display: inline-block;
-        margin-right: 13px;
-    }
+    // .rate-star{
+    //     display: inline-block;
+    //     margin-right: 13px;
+    // }
 
 }
 
@@ -735,7 +716,7 @@ color: #fff;
 .adventeges__item{
     max-width: 370px;
     text-align: center;
-    padding: 0 10px; 
+    padding: 0 15px; 
        &:hover{
         .adventeges__item-images{
             background-color: $green;
@@ -765,7 +746,7 @@ color: #fff;
             color: #fff;
             font-size: 24px;
             @include f500;
-            transition: all .3s;
+            transition: all .5s;
         }
         &-text{
             color: #b0bec5;
@@ -775,7 +756,7 @@ color: #fff;
 
 .icosvg-1{
     svg{
-        width: 74px;
+        width: 50px;
     }
 }
 .icosvg-2{
@@ -814,9 +795,8 @@ color: #fff;
         font-size: 30px;
         line-height: 30px;
         color: #fff;
-        margin-right: 50px;
+        margin-right: 45px;
         max-width: 260px;
-       
             span{
                 @include f700;
             }
@@ -824,7 +804,7 @@ color: #fff;
     &__link{
         font-size: 18px;
         line-height: 36px;
-        padding: 14px 16px;
+        padding: 14px 40px;
         background-color: #fff;
         }
 }
@@ -882,8 +862,8 @@ color: #fff;
 .footer__copy-text{
     text-align: center;
     font-size: 15px;
-    color: #919696;
-    padding: 25px 0%;
+    color: #0c6868;
+    padding: 25px 0px;
 }
 
 .footer__col{
@@ -955,7 +935,6 @@ color: #fff;
         left: 0px;
 
         }
-
     }
 }
 
@@ -973,6 +952,7 @@ color: #fff;
         background-image: url(../images/css_sprites.png);
     }
 }
+
 
 .link-lineledin{
     background-position: -30px -120px;
@@ -1010,7 +990,7 @@ color: #fff;
         padding-left: 13px;
         padding-right: 50px;
         &::placeholder{
-            color: #697573;
+            color: #697378;
         }
     }
     button{
@@ -1031,11 +1011,12 @@ color: #fff;
             top: 8px;
             left: 14px;
         }
-
     }
 }
 
 //  end footer
+
+
 // start product-page
 
 .product-page__inner{
@@ -1065,10 +1046,11 @@ color: #fff;
 }
 
 .category__list{
-    padding: 10px;
+    padding-top: 10px;
     li{
         padding: 10px 0px;
-        display: flex;justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
         position: relative;
         padding-left: 20px;
         &::before{
@@ -1091,7 +1073,8 @@ color: #fff;
 
 .price-renge{
     form{
-        padding-bottom: 25px;
+        // padding-bottom: 25px;
+        padding-top: 20px;
     }
     button{
         margin-top: 55px;
@@ -1115,7 +1098,6 @@ color: #fff;
             left: 58px;   
         }
     }
-
 }
 
 .irs-min,
@@ -1137,7 +1119,6 @@ color: #fff;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    border: 4px;
     background-color: #fff;
     border: 4px solid $green;
     top:19px;
@@ -1174,16 +1155,23 @@ color: #fff;
         
     }
     .product__item-content{
-        padding: 30px 30px;
+        padding: 0;
+        // padding: 30px 30px;
         min-height: 75px;
         border-bottom: none;
     }
     .product__item-info{
-        padding: 20px 0;
+        padding: 0;
+        // padding: 20px 0;
         min-height: 0;
-        border-bottom: transparent;
-       
+        // border-bottom: transparent;   
     }
+     .product__item-title{
+        font-size: 16px;
+    }
+     .product__item-price{
+    font-size: 16px;
+    } 
     .product__item-starnum{
         display: none;
     }
@@ -1256,7 +1244,8 @@ button.icon-sort-amount-desc1{
     font-size: 18px;
     color:#455a64;
 }
-button.icon-sort{
+button.icon-sort,
+button.icon-unsorted{
     font-size: 14px;
     color:#707070;
 }
@@ -1279,11 +1268,11 @@ button.icon-sort{
     }
     .product__item-content{
         padding: 10px 20px;
-
     }
     .product__item-title{
-        font-size: 16px;
-    }
+    font-size: 16px;
+  }
+   
     .product__item-info{
         min-height: 65px;
         padding: 10px 20px;
@@ -1305,7 +1294,7 @@ button.icon-sort{
     margin-left: -30px;
 }
 
-.pagination{
+.pagination__list{
     li{
         display: inline-block;
         &+li{
@@ -1328,7 +1317,6 @@ button.icon-sort{
             background-color: $red;
             color:#fff;
         }
-
     }
 }
 
@@ -1339,7 +1327,7 @@ button.icon-sort{
 .product__item-price{
     span{
     display: none;
-}
+    }
 }
 
 .product__item-list{
@@ -1373,7 +1361,7 @@ button.icon-sort{
 }
 
 .product__item{
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     &.list{        
         max-width: 100%;
         flex-basis: 100%;
@@ -1386,7 +1374,8 @@ button.icon-sort{
             display: block;
             font-size: 14px;
             color:#70838d;
-            margin-top: 20px;
+            margin-top: 15px;
+            // margin-top: 20px;
             margin-bottom: 5px;
         }
         .product__item-price{
@@ -1539,8 +1528,8 @@ button.icon-sort{
     color:$bg;
     padding: 18px 25px;
     background-color: #fff;
-     border: 1px solid #dcdcdc;
-     margin-bottom: 28px;
+    border: 1px solid #dcdcdc;
+    margin-bottom: 28px;
 }
 
 .product-one__more-icons{
@@ -1580,8 +1569,7 @@ button.icon-sort{
 
 .productmini__thema{
     color:$green;
-
-
+    font-size: 12px;
 }
 
 .productmini__price{
@@ -1643,6 +1631,10 @@ button.icon-sort{
     display: flex;
     justify-content: space-between;
     padding: 30px 0;
+
+
+
+
       select{
         max-width: 83px;
         width: 100%;
@@ -1656,53 +1648,11 @@ button.icon-sort{
         align-items: center;
     }
 }
-
-.jq-selectbox__select {
-        height: 32px;
-        padding: 7px 10px;
-        border: 1px solid #d3d3d3;
-        border-bottom-color: #d3d3d3;
-        border-radius: 0px;
-        background: #f9f9f9;
-        box-shadow: none;
-        font: 13px 'Roboto Regular',sans-serif;
-        color: #707070;
-        text-shadow: none;
-}
-
-.jq-selectbox{
-        min-width: 83px;
-        width: 100%;
-       
-} 
-  
-.jq-selectbox__trigger{
-    border-left: none; 
-
-}
-.jq-selectbox__select-text{
-   width: 45px;
-   font-family: 13px 'Roboto Regular',sans-serif;
-}  
-
-.jq-selectbox__trigger-arrow {
-    border-top-color: transparent;
-    &::before{
-    position: absolute;
-    font-family: 'icomoon';
-    content: "\f0d7";
-    color: #76ae36;
-    top: -9px;
-    right: -6px;
-    }
-   
-}
 .price__product{
     font-size: 22px;
     @include f500;
     color: $red;    
 }
-
 .product__price{
     button{
         margin-bottom: 7px;
@@ -1724,20 +1674,17 @@ button.icon-sort{
            padding-right: 8px;
         }
     }
-
-    .icon-shopping-cart{
-        background-color: $green;
-    }
-
-    .icon-heart-o{
-        background-color: #42a5f5;
+.icon-shopping-cart{
+     background-color: $green;
+}
+.icon-heart-o{
+    background-color: #42a5f5;
     }
 }
 
 .product-author__box{
     padding: 25px 0;
-    display: flex;
-    
+    display: flex;    
 }
 
 .author__avatar{
@@ -1806,7 +1753,6 @@ button.icon-sort{
     height: 37px;   
     }
 }
-
 .aside__item-sales{
     padding-top: 23px;
     font-size: 16px;
@@ -1825,7 +1771,6 @@ button.icon-sort{
         }
     }
 }
-
 .aside__item.sales-number{
     padding-bottom: 25px;
 }
@@ -1840,6 +1785,57 @@ button.icon-sort{
         @include f500;
     }
 }
+
+.jq-selectbox__select {
+        height: 32px;
+        padding: 7px 10px;
+        border: 1px solid #d3d3d3;
+        border-bottom-color: #d3d3d3;
+        border-radius: 0px;
+        background: #f9f9f9;
+        box-shadow: none;
+        font: 13px 'Roboto Regular',sans-serif;
+        color: #707070;
+        text-shadow: none;
+}
+
+.jq-selectbox{
+        min-width: 83px;
+        width: 100%;
+       
+} 
+  
+.jq-selectbox__trigger{
+    border-left: none; 
+
+}
+.jq-selectbox__select-text{
+   width: 45px;
+   font-family: 13px 'Roboto Regular',sans-serif;
+}  
+
+.jq-selectbox__trigger-arrow {
+    border-top-color: transparent;
+    &::before{
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\f0d7";
+    color: #76ae36;
+    top: -9px;
+    right: -6px;
+    }
+   
+}
+
+
+
+
+
+
+
+
+
+
 // end product-one
 
 // start page-404
@@ -1875,6 +1871,7 @@ button.icon-sort{
     padding-top: 70px;
     line-height: 300px;
     position: relative;
+    padding-bottom: 20px;
     &::after{
         content: "";
         position: absolute;
@@ -1920,7 +1917,7 @@ button.icon-sort{
 .about__box{
     h3{
         font-size: 20px;
-        @include f500;
+        @include f700;
         color: #444;
         margin-top: 40px;
         margin-bottom: 15px;
@@ -2036,8 +2033,7 @@ button.icon-sort{
         &::placeholder{
             font-size: 15px;
             color: #7a7a7a;
-        }
-          
+        }    
     }
     button{
         border: none;
@@ -2092,7 +2088,7 @@ button.icon-sort{
         }
     }
     .tabs .tab+.tab{
-        border-left: 0;
+        border-left: none;
     }
     .tab__content{
         width: 100%;
@@ -2234,7 +2230,6 @@ button.icon-sort{
     position: relative;
     background-color: $text;
     box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
-    
     &::before{
         position: absolute;
         content: "\f003";
@@ -2295,7 +2290,7 @@ button.icon-sort{
 
 .profile__item-content{
     font-size: 14px;
-    height: 24px;
+    // height: 24px;
     color: #707070;
     @include f500;
     &.profile__item-sales{
@@ -2446,6 +2441,7 @@ button.icon-sort{
         outline: none;
     }
     .jq-file__browse {
+    position: absolute;
     top: 5px;
     right: auto;
     left: 9px;
@@ -2505,7 +2501,7 @@ button.icon-sort{
         border: none;
         top: 0;
         right: 20px;
-        line-height: 20px;
+        line-height: 40px;
         font-size: 15px;
         &::before{
              font-family: 'icomoon';
@@ -2606,7 +2602,7 @@ button.icon-sort{
         border: none;
         top: 0;
         right: 20px;
-        line-height: 20px;
+        line-height: 40px;
         font-size: 15px;
         &::before{
              font-family: 'icomoon';
