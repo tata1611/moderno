@@ -215,8 +215,6 @@
     
 }
 
-
-
 @media(max-width:840px){
     .author{
         min-height: 450px;
@@ -383,7 +381,6 @@
     .productmini{
         max-width: 100%;
     }
-   
 }
 
 @media(max-width:600px){
@@ -420,18 +417,15 @@
         margin-left: 0;
         top: 16px;
         right: 0px;  
-        // top: 9px;
-        // right: 13px;  
+        top: 9px;
+        right: 13px;  
     }
 
-// ?????
     .page-404__wrapper, 
     .about__wrapper, 
     .contact__wrapper{
         margin-bottom: 80px;
     }
-
-// ????
 
     .upload__inner-content{
         padding-left: 10px;
@@ -557,7 +551,6 @@
         background-color:$bg;
         position: absolute;
         right: 0px;
-        // right: -15px;
         top: 0;
         z-index: 4;
         &::before{
@@ -573,9 +566,9 @@
         }
     }
 
-    // .header{
-    //     overflow: hidden;    
-    // }
+    .header{
+        overflow: hidden;    
+    }
 
     .header__box{
         transition: all .5s;
